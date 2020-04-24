@@ -31,11 +31,11 @@ class Transaction {
   @Column()
   type: 'income' | 'outcome';
 
-  @ManyToOne(() => Category, category => category.id, { eager: true })
+  @ManyToOne(() => Category, category => category.transaction, { eager: true })
   @JoinColumn({ name: 'category_id' })
   category: Category;
 
-  @CreateDateColumn({ select: false })
+  @CreateDateColumn()
   created_at: Date;
 
   @UpdateDateColumn({ select: false })
