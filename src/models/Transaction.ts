@@ -31,7 +31,7 @@ class Transaction {
   @Column()
   type: 'income' | 'outcome';
 
-  @ManyToOne(() => Category, category => category.transaction, { eager: true })
+  @ManyToOne(() => Category, category => category.id, { eager: true })
   @JoinColumn({ name: 'category_id' })
   category: Category;
 

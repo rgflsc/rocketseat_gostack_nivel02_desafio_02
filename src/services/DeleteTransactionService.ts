@@ -13,7 +13,7 @@ class DeleteTransactionService {
     const transaction = await transactionsRepository.findOne({ where: { id } });
 
     if (transaction) {
-      transactionsRepository.delete(transaction);
+      transactionsRepository.delete(id);
     }
   }
 }
